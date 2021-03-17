@@ -49,6 +49,5 @@ public class Loginpage {
 		elementutil.doClick(Register);
 		
 		return new RegistrationPage(driver);
-	}
-	
+	}	
 }
