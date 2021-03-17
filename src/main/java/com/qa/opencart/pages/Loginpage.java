@@ -51,5 +51,4 @@ public class Loginpage {
 		return new RegistrationPage(driver);
 	}
 	
-
 }
