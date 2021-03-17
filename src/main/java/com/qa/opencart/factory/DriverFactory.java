@@ -71,54 +71,49 @@ public class DriverFactory {
 		return tlDriver.get();
 	}
 	
-	public Properties init_prop()
-	{
-		prop=new Properties();
-		FileInputStream ip=null;
+	public Properties init_prop() {
+		prop = new Properties();
+		FileInputStream ip = null;
+
 		String env = System.getProperty("env");
-		if(env==null)
-		{
-			 try {
+		if (env == null) {
+			try {
 				ip = new FileInputStream("./src/test/resources/config/config.properties");
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			}
-		}
-		else
-		{
-			try {
-			switch (env) {
-			case "qa":
-				ip = new FileInputStream("./src/test/resources/config/qa.config.properties");
-				break;
-				
-			case "dev":
-				ip = new FileInputStream("./src/test/resources/config/dev.config.properties");
-				break;
-				
-			case "stage":
-				ip = new FileInputStream("./src/test/resources/config/stage.config.properties");
-				break;
+		} else {
 
-			default:
-				break;
+			try {
+				switch (env) {
+				case "qa":
+					ip = new FileInputStream("./src/test/resources/config/qa.config.properties");
+					break;
+				case "stage":
+					ip = new FileInputStream("./src/test/resources/config/stage.config.properties");
+					break;
+				case "dev":
+					ip = new FileInputStream("./src/test/resources/config/dev.config.properties");
+					break;
+
+				default:
+					System.out.println("Please pass the right env value...");
+					break;
+				}
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+
 			}
+
 		}
-			
-		catch(FileNotFoundException e)
-			{
-			 e.printStackTrace();
-			}
-			
 		try {
 			prop.load(ip);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-	}
 		return prop;
-}
+
+	}
 	
 	public static String getScreenshot()
 	{
