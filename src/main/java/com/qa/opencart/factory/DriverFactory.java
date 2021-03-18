@@ -35,6 +35,7 @@ public class DriverFactory {
 		String browserName=prop.getProperty("browser").trim();
 		highlight=prop.getProperty("heighlight").trim();
 		optionsManager=new OptionsManager(prop);
+		
 		switch (browserName) {
 		case "chrome":
 			

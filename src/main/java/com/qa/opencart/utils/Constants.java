@@ -8,7 +8,7 @@ public class Constants {
 	
 	public final static String ACCOUNT_PAGE_TITLE="My Account";
 	
-	public final static int ACCOUNT_PAGE_SECTION_COUNT=5;
+	public final static int ACCOUNT_PAGE_SECTION_COUNT=4;
 	
 	public final static int IMAGES_COUNT=5;
 	
